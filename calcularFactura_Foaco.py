@@ -38,9 +38,10 @@ clientes = {
 
 def pedir_fecha ():
     global fechaFactura, numeroFactura
-
+    print(fr.LIGHTBLUE_EX)
     fechaFactura = input("Ingrese la fecha de la Factura: ")
     numeroFactura = int(input("Ingrese el numero de la factura: "))
+    print(fr.LIGHTWHITE_EX)
 
 def pedir_cuit (): 
     global clienteFactura 
@@ -104,14 +105,15 @@ def calcular_totalFactura():
 
 
 def mostrar_factura ():
-    print("Fecha: ", fechaFactura)
-    print("Numero: ", numeroFactura)
-    print("Letra: ", letraFactura)
-    print("Cliente: ", clienteFactura)
+    print()
+    print(fr.LIGHTRED_EX, "Fecha: ", fechaFactura, fr.LIGHTWHITE_EX)
+    print(fr.LIGHTRED_EX,"Numero: ", numeroFactura, fr.LIGHTWHITE_EX)
+    print(fr.LIGHTRED_EX, "Letra: ", letraFactura, fr.LIGHTWHITE_EX)
+    print(fr.LIGHTYELLOW_EX, "Cliente: ", clienteFactura, montoIva, fr.WHITE)
     for detallesFac in detallesFactura: 
-        print(f"Codigo de articulo: {detallesFac[0]}, Nombre del articulo: {detallesFac[1]}, Cantidad: {detallesFac[2]}, Precio Unitario: {detallesFac[3]}, TOTAL: {detallesFac[4]}")
-    print("IVA: ", montoIva)
-    print("Total: ",totalFactura)
+        print(f" Codigo de articulo:{fr.LIGHTYELLOW_EX} {detallesFac[0]}{fr.LIGHTWHITE_EX}, Nombre del articulo:{fr.LIGHTYELLOW_EX} {detallesFac[1]}{fr.LIGHTWHITE_EX}, Cantidad:{fr.LIGHTYELLOW_EX} {detallesFac[2]}{fr.LIGHTWHITE_EX}, Precio Unitario:{fr.LIGHTYELLOW_EX} {detallesFac[3]}{fr.LIGHTWHITE_EX}, TOTAL:{fr.LIGHTGREEN_EX} {detallesFac[4]}{fr.LIGHTWHITE_EX}")
+    print(fr.LIGHTYELLOW_EX, "IVA: ", montoIva, fr.WHITE)
+    print(fr.MAGENTA, "Total: ",totalFactura, fr.WHITE)
 
 
 if __name__ == "__main__":
@@ -122,5 +124,6 @@ if __name__ == "__main__":
     calcularMontoIVa(cuit)
     calcular_totalFactura()
     mostrar_factura()
+
 
 # Me re costo boludo, no quiero massssss
